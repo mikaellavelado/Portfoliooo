@@ -1,0 +1,262 @@
+      
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>My Portfolio</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color: pink;
+    --primary-color-dark: pink;
+    --secondary-color: black;
+    --text-dark: Pink;
+    --text-light: #faf5ff;
+    --extra-light: #faf5ff;
+    --max-width: 1200px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-image: url("https://i.pinimg.com/564x/9b/28/bb/9b28bbad0517d65edf175f9fc1d6faee.jpg");
+
+}
+
+nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: crimson;
+    z-index: 99;
+}
+
+.nav__content{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: .3s;
+}
+nav .logo a:hover {
+    color: var(--primary-color-dark);
+}
+
+nav .checkbox{
+    display: none;
+}
+
+nav input{
+    display: none;
+}
+nav .checkbox i{
+    font-size: 2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a{
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    border-top-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+
+
+.section__container{
+    min-height: 100vh;
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.subtitle{
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.title{
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.title span {
+    font-weight: 600;
+}
+
+.description{
+    line-height: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+}
+
+.action__btns a{
+    text-decoration: none;
+    color: pink;
+    background: crimson;
+    margin: 26px 100px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: .4s ease;
+}
+
+.action_btns a:hover{
+    background: crimson;
+}
+
+.portfolio{
+    background-color: var(--primary-color);
+    color: pink;
+}
+
+.portfolio{
+    background-color: var(--primary-color);
+}
+
+.image{
+    display: grid;
+    place-items: center;
+}
+
+.image img{
+    width: min(25rem, 90%);
+    border-radius: 100%;
+}
+
+
+
+@media (width < 750px){
+    nav .checkbox{
+        display: block;
+    }
+
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: var(--extra-light);
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked ~ ul{
+        left: 0;
+    }
+
+    ul li a{
+        font-size: 1.25rem;
+    }
+
+    .section__container{
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .image{
+        grid-area: 1/1/2/2;
+    }
+
+    .action__btns{
+        margin: auto;
+    }
+}
+</style>
+<body>
+    <nav><div class="nav__content">
+        <div class="logo"><a href="">Portfolio</a></div>
+        <label for="check" class="checkbox">
+            <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="https://cdn.fbsbx.com/v/t59.2708-21/438914465_1557774428401253_3860369549931234081_n.docx/Resume-mika.docx?_nc_cat=102&ccb=1-7&_nc_sid=2b0e22&_nc_eui2=AeF1JNggGNh5qJ4DgbW9LrwLEaExFJwHkikRoTEUnAeSKfr8KO4vgi6joflzl5scZ0Ljznx9aBLvy6dJdGsH9N80&_nc_ohc=4nwrfKFGjfsAb5zZBuo&_nc_pt=1&_nc_ht=cdn.fbsbx.com&oh=03_Q7cD1QFjt32P3GDTIqXnaf-36ARjgCSx_lkyFQxFwNw5IporNA&oe=662D1C18&dl=1">About</a></li>
+            <li><a href="https://mail.google.com/mail/mu/mp/433/#tl/priority/%5Esmartlabel_personal">Email</a></li>
+            <li><a href="https://mikaellavelado.github.io/jumbotron/">Project</a></li>
+        </ul>
+    </div>
+    </nav>
+    <section class="section">
+        <div class="section__container">
+            <div class="content">
+                <p class="subtitle">HELLO!</p>
+                <hi class="title">
+                    I'm <span>Mikaella,<br></span>Web Developer
+                </hi>
+                <p class="description">
+                    Welcome to My Portfolio, and I'am Bachelor Science of Computer Science(BSCS) from
+                    Cavite State University of Bacoor
+                </p>
+                <div class="action__btns">
+                    <button class="Github"></button>
+                        <a href="https://github.com/mikaellavelado">Github</a>
+                </div>
+            </div>
+            <div class="image">
+                <img src="img.jpg" alt="profile">
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
